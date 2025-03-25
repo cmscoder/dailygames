@@ -26,7 +26,7 @@ export function Input() {
         value={input}
         onChange={e => setInput(e.target.value)}
       />
-      <button type="submit">
+      <button type="submit" className="cursor-pointer">
         <FiSearch size={24} color="#ea580c" />
       </button>
     </form>
