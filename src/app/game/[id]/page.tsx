@@ -6,17 +6,15 @@ import { Label } from './components/label';
 import { GameCard } from '@/components/GameCard';
 import { Metadata } from 'next';
 
-interface PropsParams {
-  params: {
-    id: string;
-  };
-}
-export async function generateMetadata({
-  params,
-}: PropsParams): Promise<Metadata> {
+type Props = {
+  params: Promise<{ id: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
   try {
     const response: GameProps = await fetch(
-      `${process.env.NEXT_API_URL}/next-api/?api=game&id=${params.id}`,
+      `${process.env.NEXT_API_URL}/next-api/?api=game&id=${id}`,
       {
         next: { revalidate: 60 },
       }
@@ -81,14 +79,9 @@ async function getGameSorted() {
   }
 }
 
-export default async function GameDetail({
-  params,
-}: {
-  params: {
-    id: string;
-  };
-}) {
-  const { id } = params;
+export default async function Page({ params }: Props) {
+  const { id } = await params;
+
   const data: GameProps = await getData(id);
   const sortedGame: GameProps = await getGameSorted();
 

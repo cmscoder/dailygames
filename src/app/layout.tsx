@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.PROJECT_URL || 'http://localhost:3000'),
   title: 'Daily Games - Discover incredible games to have fun.',
   description: 'More than 1000 separated games and organised.',
   keywords: ['games', 'fun', 'discover', 'daily', 'play', 'steam'],
