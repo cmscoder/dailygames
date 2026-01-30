@@ -40,8 +40,7 @@ git clone https://github.com/your-username/dailygames.git
 cd dailygames
 Install dependencies:
 
-bash
-Copy code
+
 npm install
 # or
 yarn install
@@ -49,8 +48,7 @@ yarn install
 pnpm install
 Run the development server:
 
-bash
-Copy code
+
 npm run dev
 # or
 yarn dev
