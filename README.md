@@ -38,8 +38,8 @@ Follow the steps below to run the project in your development environment.
 ```bash
 git clone https://github.com/your-username/dailygames.git
 cd dailygames
-Install dependencies:
 
+Install dependencies:
 
 npm install
 # or
